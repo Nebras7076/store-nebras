@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nebras Store</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background-color: #fff; color: #000; }
+    header { background-color: #000; color: #fff; padding: 20px; text-align: center; }
+    nav { background-color: #ff6f00; display: flex; justify-content: center; gap: 20px; padding: 10px 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    .hero { background-color: #0288d1; color: white; text-align: center; padding: 60px 20px; }
+    .section { padding: 40px 20px; text-align: center; }
+    .footer { background-color: #000; color: #fff; text-align: center; padding: 20px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .product-card { border: 1px solid #ddd; border-radius: 10px; padding: 15px; background: #f9f9f9; text-align: center; }
+    .product-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+    .product-card button { background-color: #0288d1; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    .auth { display: flex; justify-content: center; gap: 30px; padding: 40px 20px; flex-wrap: wrap; }
+    .auth form { border: 1px solid #ccc; padding: 20px; border-radius: 10px; width: 300px; background-color: #f1f1f1; }
+    .auth form input { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+    .auth form button { background-color: #ff6f00; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nebras Online Store</h1>
+  </header>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#products">المنتجات</a>
+    <a href="#about">من نحن</a>
+    <a href="#contact">اتصل بنا</a>
+    <a href="#auth">تسجيل الدخول</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>مرحباً بك في متجر نبراس للمنتجات الرقمية</h2>
+    <p>أفضل منصة للمنتجات الرقمية العربية والعالمية</p>
+  </section>
+
+  <section class="section" id="products">
+    <h2>منتجاتنا</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="product1.jpg" alt="منتج 1">
+        <h3>كتاب رقمي</h3>
+        <p>دليل شامل للتسويق الرقمي</p>
+        <button onclick="window.location.href='https://fatora.io/abunebras7076/book-digital'">أضف إلى السلة</button>
+      </div>
+      <div class="product-card">
+        <img src="product2.jpg" alt="منتج 2">
+        <h3>قالب بوربوينت</h3>
+        <p>قالب احترافي لعروضك التقديمية</p>
+        <button onclick="window.location.href='https://fatora.io/abunebras7076/ppt-template'">أضف إلى السلة</button>
+      </div>
+      <div class="product-card">
+        <img src="product3.jpg" alt="منتج 3">
+        <h3>دورة تعليمية</h3>
+        <p>تعلم تصميم واجهات المواقع من الصفر</p>
+        <button onclick="window.location.href='https://fatora.io/abunebras7076/web-course'">أضف إلى السلة</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>من نحن</h2>
+    <p>متجر نبراس يقدم محتوى رقمي احترافي بجودة عالية للعملاء في العالم العربي.</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>اتصل بنا</h2>
+    <p>راسلنا عبر البريد: <a href="mailto:support@nebrasstore.com">support@nebrasstore.com</a></p>
+  </section>
+
+  <section class="section" id="auth">
+    <h2>تسجيل الدخول / إنشاء حساب</h2>
+    <div class="auth">
+      <form>
+        <h3>تسجيل الدخول</h3>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button>دخول</button>
+      </form>
+
+      <form>
+        <h3>إنشاء حساب</h3>
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button>تسجيل</button>
+      </form>
+    </div>
+  
+  <section class="section" id="cart">
+    <h2>🛒 سلة التسوق (عرض تجريبي)</h2>
+    <p>هذه سلة بسيطة فقط للعرض – لربط حقيقي تحتاج برمجة خلفية أو Firebase.</p>
+    <ul id="cart-list" style="list-style:none; padding:0;"></ul>
+  </section>
+
+  <section class="section" id="real-contact">
+    <h2>📩 تواصل معنا مباشرة</h2>
+    <form action="https://formsubmit.co/abunebras7076@gmail.com" method="POST" style="max-width:400px; margin:auto;">
+      <input type="text" placeholder="اسمك" required style="width:100%; margin:10px 0; padding:10px;">
+      <input type="email" placeholder="بريدك الإلكتروني" required style="width:100%; margin:10px 0; padding:10px;">
+      <textarea placeholder="رسالتك" required style="width:100%; margin:10px 0; padding:10px;" rows="4"></textarea>
+      <button type="submit" style="background:#ff6f00; color:white; padding:10px 20px; border:none; border-radius:5px;">إرسال</button>
+    </form>
+  </section>
+
+  <section class="section" id="admin">
+    <h2>🧑‍💼 لوحة تحكم المدير</h2>
+    <form onsubmit="event.preventDefault(); showDashboard();" style="max-width:400px; margin:auto;">
+      <input type="text" id="admin-user" placeholder="اسم المستخدم" required style="width:100%; margin:10px 0; padding:10px;">
+      <input type="password" id="admin-pass" placeholder="كلمة المرور" required style="width:100%; margin:10px 0; padding:10px;">
+      <button type="submit" style="background:#000; color:white; padding:10px 20px; border:none; border-radius:5px;">دخول</button>
+    </form>
+    <div id="dashboard" style="display:none; margin-top:30px;">
+      <h3>مرحبًا بك يا مدير 👋</h3>
+      <p>عدد المنتجات الحالية: 3</p>
+      <p>طلبات اليوم: 0 (محاكاة)</p>
+      <button onclick="alert('تم تحديث البيانات (محاكاة)');" style="padding:8px 15px; background:#0288d1; color:white; border:none; border-radius:5px;">تحديث البيانات</button>
+    </div>
+  </section>
+
+  <script>
+    function showDashboard() {
+      const user = document.getElementById('admin-user').value;
+      const pass = document.getElementById('admin-pass').value;
+      if (user === 'admin' && pass === '1234') {
+        document.getElementById('dashboard').style.display = 'block';
+        alert('تم تسجيل الدخول بنجاح');
+      } else {
+        alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+      }
+    }
+  </script>
+</section>
+
+  <script>
+    const cartItems = [];
+    function addToCart(name) {
+      cartItems.push(name);
+      document.getElementById('cart-list').innerHTML = cartItems.map(item => '<li>✅ ' + item + '</li>').join('');
+      alert('تمت إضافة ' + name + ' إلى السلة');
+    }
+  </script>
+
+  <footer class="footer">
+    <p>&copy; 2025 Nebras Store - جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>
