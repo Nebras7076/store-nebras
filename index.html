@@ -3,6 +3,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>متجر Nebras</title>
   <style>
     body {
@@ -21,6 +22,21 @@
       max-width: 220px;
       height: auto;
     }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
     main {
       display: flex;
       flex-direction: column;
@@ -35,6 +51,10 @@
       margin-bottom: 2rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: scale(1.03);
     }
     .product img {
       width: 100%;
@@ -59,9 +79,14 @@
       text-decoration: none;
       border-top: 1px solid #ddd;
       font-weight: bold;
+      transition: background-color 0.3s ease;
     }
     .buy-button:hover {
       background-color: #0056b3;
+    }
+    .rating {
+      color: gold;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -69,6 +94,14 @@
   <header>
     <img src="header-logo.png" alt="Nebras Logo">
   </header>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#about">من نحن</a>
+    <a href="#contact">تواصل معنا</a>
+    <a href="#login">تسجيل الدخول</a>
+    <a href="#register">تسجيل حساب</a>
+    <a href="#dashboard">لوحة التحكم</a>
+  </nav>
   <main>
     <div class="product">
       <img src="premiere-logo.png" alt="Adobe Premiere Pro">
@@ -76,8 +109,20 @@
         <h2>Adobe Premiere Pro</h2>
         <p>حساب مفعل</p>
         <p><strong>السعر:</strong> 30 ريال</p>
+        <div class="rating">★★★★★</div>
+        <a class="buy-button" href="https://ko-fi.com/s/27bc373e3b" target="_blank">اشتر الآن</a>
       </div>
-      <a class="buy-button" href="https://ko-fi.com/s/27bc373e3b" target="_blank">اشتر الآن</a>
+    </div>
+
+    <div class="product">
+      <img src="photoshop-logo.png" alt="Adobe Photoshop">
+      <div class="product-details">
+        <h2>Adobe Photoshop</h2>
+        <p>نسخة مفعلة للكمبيوتر</p>
+        <p><strong>السعر:</strong> 25 ريال</p>
+        <div class="rating">★★★★☆</div>
+        <a class="buy-button" href="https://ko-fi.com/s/2aae83e78e" target="_blank">اشتر الآن</a>
+      </div>
     </div>
   </main>
 </body>
