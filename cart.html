@@ -2,8 +2,42 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>متجر نبراس</title>
+  <title>سلة التسوق - متجر نبراس</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .cart-container {
+      background: #fff;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .cart-total {
+      text-align: left;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .checkout-btn {
+      margin-top: 20px;
+      background: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .checkout-btn:hover {
+      background: #218838;
+    }
+  </style>
 
 <style>
   .dark-mode {
@@ -46,32 +80,47 @@
 
 </head>
 <body>
-  <header>
-    <h1>مرحبا بكم في متجر نبراس</h1>
-  </header>
   <nav>
     <a href="index.html">الرئيسية</a>
     <a href="about.html">من نحن</a>
     <a href="products.html">المنتجات</a>
     <a href="contact.html">تواصل معنا</a>
     <a href="login.html">تسجيل الدخول</a>
+    <a href="cart.html">السلة</a>
   </nav>
+
   <main>
-    <section>
-      <h2>الرئيسية</h2>
-      <p>مرحبا بكم في متجر نبراس الرقمي! تصفح منتجاتنا الآن.</p>
+    <section class="cart-container">
+      <h2>سلة التسوق</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">الإجمالي: 0 ريال</div>
+      <button class="checkout-btn" onclick="checkout()">إتمام الشراء</button>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 متجر نبراس الرقمي. جميع الحقوق محفوظة.</p>
-  
-    <div style='margin-top: 15px; font-size: 20px;'>
-      <a href="https://www.instagram.com/nebras7076" target="_blank" style="margin: 0 10px;">📷</a>
-      <a href="https://wa.me/966536262043" target="_blank" style="margin: 0 10px;">💬</a>
-      <a href="mailto:support@nebras.com" style="margin: 0 10px;">✉️</a>
-    </div>
 
-</footer>
+  <script>
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotalEl = document.getElementById("cart-total");
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+
+    cart.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `<span>${item.name}</span><span>${item.price} ريال</span>`;
+      cartItemsContainer.appendChild(div);
+      total += item.price;
+    });
+
+    cartTotalEl.textContent = "الإجمالي: " + total + " ريال";
+
+    function checkout() {
+      alert("شكراً لطلبك! سيتم التواصل معك قريباً.");
+      localStorage.removeItem("cart");
+      location.reload();
+    }
+  </script>
 
   <footer>
     <p>&copy; 2025 متجر نبراس الرقمي. جميع الحقوق محفوظة.</p>
